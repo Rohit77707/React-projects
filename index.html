@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E-Commerce Solutions</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+    header {
+      background: #1a2a6c;
+      color: white;
+      padding: 1.5rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      animation: slideDown 0.8s ease-in-out;
+    }
+    header .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      margin: 0;
+      padding: 0;
+      margin-right: 15px;
+    }
+    nav ul li {
+      margin-left: 1rem;
+    }
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    nav ul li a:hover {
+      color: #A5B4FC;
+      text-decoration: underline;
+    }
+    .hero {
+      background: linear-gradient(135deg, #2563EB, #1E40AF);
+      color: white;
+      padding: 5rem 1rem;
+      text-align: center;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+    .hero a {
+      display: inline-block;
+      background: #4F46E5;
+      color: white;
+      padding: 1rem 2rem;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background-color 0.3s, transform 0.3s;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    .hero a:hover {
+      background: #4338CA;
+      transform: scale(1.05);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    }
+    .services, .portfolio, .blog, .contact {
+      padding: 3rem 1rem;
+      animation: fadeInUp 1.2s ease-in-out;
+    }
+    .services h2, .portfolio h2, .blog h2, .contact h2 {
+      text-align: center;
+      margin-bottom: 2rem;
+      animation: bounceIn 1s ease;
+    }
+    .grid {
+      display: grid;
+      gap: 1.5rem;
+    }
+    .grid-3 {
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+    .card {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+      animation: zoomIn 1.2s ease-in-out;
+    }
+    .card:hover {
+      transform: translateY(-5px) scale(1.02);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+      background-color:#007bff;
+      color:white;
+    }
+    .card a {
+      display: inline-block;
+      margin-top: 1rem;
+      color: #2563EB;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    .card a:hover {
+      color: #1E40AF;
+      text-decoration: underline;
+    }
+    footer {
+      background: #1a2a6c;
+      color: white;
+      text-align: center;
+      padding: 1.5rem 0;
+      animation: fadeInUp 1.2s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+    @keyframes fadeInUp {
+      from {
+        transform: translateY(20px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+    @keyframes slideDown {
+      from {
+        transform: translateY(-20px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+    @keyframes bounceIn {
+      0% {
+        transform: scale(0.9);
+        opacity: 0;
+      }
+      50% {
+        transform: scale(1.1);
+        opacity: 0.5;
+      }
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+    @keyframes zoomIn {
+      from {
+        transform: scale(0.8);
+        opacity: 0;
+      }
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+    @media (max-width: 768px) {
+      header .container {
+        flex-direction: column;
+        text-align: center;
+      }
+      nav ul {
+        justify-content: center;
+      }
+      .hero {
+        padding: 3rem 1rem;
+      }
+      .services h2, .portfolio h2, .blog h2, .contact h2 {
+        font-size: 1.5rem;
+      }
+      .card {
+        padding: 1rem;
+      }
+      .contact form {
+        padding: 0 1rem;
+      }
+    }
+    /* General Contact Section Styling */
+#contact {
+  background-color: #f4f4f9;
+  padding: 40px;
+  max-width: 600px;
+  margin: 0 auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-family: 'Arial', sans-serif;
+}
+
+#contact h2 {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+#contact p {
+  text-align: center;
+  font-size: 16px;
+  margin-bottom: 30px;
+  color: #666;
+}
+
+/* Styling for Form Inputs */
+#contact form {
+  display: flex;
+  flex-direction: column;
+}
+
+#contact input, 
+#contact textarea {
+  padding: 12px;
+  margin-bottom: 20px;
+  font-size: 16px;
+  border: 2px solid #ddd;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+/* Focus and Hover Animation */
+#contact input:focus, 
+#contact textarea:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 10px rgba(0, 123, 255, 0.2);
+}
+
+#contact input::placeholder, 
+#contact textarea::placeholder {
+  color: #bbb;
+  transition: color 0.3s ease;
+}
+
+#contact input:focus::placeholder, 
+#contact textarea:focus::placeholder {
+  color: transparent;
+}
+
+/* Styling for Submit Button */
+#contact button {
+  padding: 14px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#contact button:hover {
+  background-color: #0056b3;
+}
+
+  </style>
+  
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>E-Commerce Solutions</h1>
+      <nav>
+        <ul>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#blog">Blog</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <section class="hero">
+    <h2>Comprehensive E-Commerce Solutions</h2>
+    <p>Empowering your business with cutting-edge technology and seamless integrations.</p>
+    <a href="#contact" style="background: #2563EB; color: white; padding: 1rem 2rem; border-radius: 8px; text-decoration: none;">Get Started</a>
+  </section>
+  <section id="services" class="services">
+    <h2>Our Services</h2>
+    <div class="grid grid-3">
+      <div class="card">
+        <h3>Website Development</h3>
+        <p>Expertise in Shopify, WooCommerce, Magento, and custom full-stack website development.</p>
+      </div>
+      <div class="card">
+        <h3>Integration Support</h3>
+        <p>Seamless integration of third-party tools and APIs to enhance functionality.</p>
+      </div>
+      <div class="card">
+        <h3>OMS Solutions</h3>
+        <p>Complete onboarding and support for Order Management Systems.</p>
+      </div>
+      <div class="card">
+        <h3>ERP and Logistics</h3>
+        <p>Onboarding and support for ERP systems and logistics solutions tailored to business needs.</p>
+      </div>
+      <div class="card">
+        <h3>Marketplace Services</h3>
+        <p>Onboarding support and catalog creation for marketplaces like Myntra, Flipkart, Amazon, and Meesho.</p>
+      </div>
+      <div class="card">
+        <h3>Digital Marketing</h3>
+        <p>End-to-end digital marketing solutions, including Meta Ads, GTAG, and Pixel integration.</p>
+      </div>
+    </div>
+  </section>
+  <section id="portfolio" class="portfolio">
+    <h2>Our Portfolio</h2>
+    <p>Check out our successful projects for various businesses.</p>
+    <div class="grid grid-3">
+      <div class="card">
+        <h3>Project 1</h3>
+        <p>Description of project 1.</p>
+        <a href="#">View Details</a>
+      </div>
+      <div class="card">
+        <h3>Project 2</h3>
+        <p>Description of project 2.</p>
+        <a href="#">View Details</a>
+      </div>
+      <div class="card">
+        <h3>Project 3</h3>
+        <p>Description of project 3.</p>
+        <a href="#">View Details</a>
+      </div>
+    </div>
+  </section>
+  <section id="blog" class="blog">
+    <h2>Insights & Tips</h2>
+    <p>Stay updated with the latest trends in e-commerce.</p>
+    <div class="grid grid-3">
+      <div class="card">
+        <h3>Blog Post 1</h3>
+        <p>Summary of blog post 1.</p>
+        <a href="#">Read More</a>
+      </div>
+      <div class="card">
+        <h3>Blog Post 2</h3>
+        <p>Summary of blog post 2.</p>
+        <a href="#">Read More</a>
+      </div>
+      <div class="card">
+        <h3>Blog Post 3</h3>
+        <p>Summary of blog post 3.</p>
+        <a href="#">Read More</a>
+      </div>
+    </div>
+  </section>
+  <section id="contact" class="contact">
+    <h2>Contact Us</h2>
+    <p>We'd love to hear from you. Let's discuss your project!</p>
+    <form>
+      <input type="text" placeholder="Your Name">
+      <input type="email" placeholder="Your Email">
+      <textarea placeholder="Your Message"></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+  <footer>
+    <p>&copy; <script>document.write(new Date().getFullYear())</script> E-Commerce Solutions. All rights reserved.</p>
+  </footer>
+</body>
+</html>
